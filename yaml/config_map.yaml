@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: aggregator-config
+  namespace: default
+data:
+  user.url: http://localhost:10000/
+  orders.url: http://localhost:9000/
+  

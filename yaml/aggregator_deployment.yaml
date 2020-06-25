@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: order-details-deployment
+  labels:
+    app: order-details
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: order-details
+  template:
+    metadata:
+      labels:
+        app: order-details
+    spec:
+      containers:
+      - name: order-details
+        image: asdocker1987/aggregateservice:v03
+        ports:
+        - containerPort: 8080
+        env:
+          - name: USER_URL
+            valueFrom:
+              configMapKeyRef:
+                name: aggregator-config
+                key: user.url
+          - name: ORDERS_URL
+            valueFrom:
+              configMapKeyRef:
+                name: aggregator-config
+                key: orders.url
+                

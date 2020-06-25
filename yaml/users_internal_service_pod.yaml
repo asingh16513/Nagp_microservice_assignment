@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: user-internal-service-pod
+  labels:
+    app: user-internal-service
+spec:
+  containers:
+  - name: user-internal-service-container
+    image: asdocker1987/userservicev2:latest
