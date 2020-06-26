@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
   - name: orders-internal-service-container
-    image: asdocker1987/ordersservice:v03
+    image: asdocker1987/orderservicev2:latest

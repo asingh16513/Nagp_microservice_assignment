@@ -8,7 +8,7 @@ namespace OrderService.Models
     public class Order
     {
         public int  OrderId { get; set; }
-        public double OrderAmount { get; set; }
+        public double OrderAmount { get; set; }    
         public DateTime OrderDate { get; set; }
     }
 }
