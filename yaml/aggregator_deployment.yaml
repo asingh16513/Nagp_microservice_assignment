@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: order-details
-        image: asdocker1987/aggregateservice:v03
+        image: asdocker1987/aggregatorservicev2:latest
         ports:
         - containerPort: 8080
         env:
