@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: userservice-deployement
+ labels:
+  app: userservice
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: userservice
+ template:
+  metadata:
+   labels:
+    app: userservice
+  spec:
+   containers:
+    - name: userservice-container
+      image: asdocker1987/userservicev1:latest
+      ports:
+       - containerPort: 10000

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: orderservice-deployement
+ labels:
+  app: orderservice
+spec:
+ replicas: 1
+ selector:
+  matchLabels:
+   app: orderservice
+ template:
+  metadata:
+   labels:
+    app: orderservice
+  spec:
+   containers:
+    - name: orderservice-container
+      image: asdocker1987/orderservicev1:latest
+      ports:
+       - containerPort: 9000
