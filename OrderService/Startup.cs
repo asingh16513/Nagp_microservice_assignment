@@ -7,7 +7,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting; 
+using Microsoft.Extensions.Hosting;
+using OrderService.Converter;
 
 namespace OrderService
 {
@@ -23,6 +24,7 @@ namespace OrderService
             {
                 o.JsonSerializerOptions.PropertyNamingPolicy = null;
                 o.JsonSerializerOptions.DictionaryKeyPolicy = null;
+                o.JsonSerializerOptions.Converters.Add(new DateTimeConverter());
             });
         }
 

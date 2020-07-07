@@ -7,4 +7,4 @@ metadata:
 spec:
   containers:
   - name: user-internal-service-container
-    image: asdocker1987/userservicev2:latest
+    image: asdocker1987/userservicev11:latest    
