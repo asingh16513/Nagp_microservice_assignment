@@ -3,8 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:52872",
-      "sslPort": 44363
+      "applicationUrl": "http://localhost:52872" 
     }
   },
   "profiles": {
@@ -28,8 +27,7 @@
       "commandName": "Docker",
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}",
-      "publishAllPorts": true,
-      "useSSL": true
+      "publishAllPorts": true 
     }
   }
 }

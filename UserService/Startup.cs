@@ -38,7 +38,7 @@ namespace UserService
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseHttpsRedirection();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>

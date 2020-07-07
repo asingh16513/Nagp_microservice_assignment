@@ -35,7 +35,9 @@ namespace AggregatorService
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-            } 
+            }
+            app.UseHttpsRedirection();
+
             app.UseRouting();
             await app.UseOcelot();
             //app.UseEndpoints(endpoints =>

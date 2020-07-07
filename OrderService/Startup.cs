@@ -34,6 +34,7 @@ namespace OrderService
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseHttpsRedirection();
 
             app.UseRouting();
 
