@@ -18,4 +18,4 @@ spec:
     - name: userservice-container
       image: asdocker1987/userservicev1:latest
       ports:
-       - containerPort: 10000
+       - containerPort: 9001

@@ -1,16 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 using Core;
 using Infrastructure;
+using Jaeger;
+using Jaeger.Reporters;
+using Jaeger.Samplers;
+using Jaeger.Senders.Thrift;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
+using OpenTracing;
+using OpenTracing.Util;
 
 namespace UserService
 {
@@ -28,6 +36,25 @@ namespace UserService
                 o.JsonSerializerOptions.PropertyNamingPolicy = null;
                 o.JsonSerializerOptions.DictionaryKeyPolicy = null;
             });
+            //services.AddSingleton<ITracer>(serviceProvider =>
+            //{
+            //    string serviceName = Assembly.GetEntryAssembly().GetName().Name;
+
+            //    ILoggerFactory loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
+
+            //    ISampler sampler = new ConstSampler(sample: true);
+            //    var reporter = new RemoteReporter.Builder().WithLoggerFactory(loggerFactory)
+            //    .WithSender(new UdpSender("jaeger-agent", 6831, 0)).Build();
+
+            //    ITracer tracer = new Tracer.Builder(serviceName).WithLoggerFactory(loggerFactory).
+            //    WithSampler(sampler).WithReporter(reporter).Build();
+
+            //    GlobalTracer.Register(tracer);
+
+            //    return tracer;
+            //});
+
+            //services.AddOpenTracing();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

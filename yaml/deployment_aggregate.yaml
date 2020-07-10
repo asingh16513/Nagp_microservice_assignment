@@ -18,4 +18,4 @@ spec:
     - name: aggregatorservice-container
       image: asdocker1987/aggregatorservicev1:latest
       ports:
-       - containerPort: 11000
+       - containerPort: 9002
