@@ -6,7 +6,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "order-service-qc64z",
+          "Host": "order-service",
           "Port": "9000"
         }
       ],
@@ -22,7 +22,7 @@
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "user-service-d6b2j",
+          "Host": "user-service",
           "Port": "9001"
         }
       ],

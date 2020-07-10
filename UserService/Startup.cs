@@ -36,25 +36,25 @@ namespace UserService
                 o.JsonSerializerOptions.PropertyNamingPolicy = null;
                 o.JsonSerializerOptions.DictionaryKeyPolicy = null;
             });
-            //services.AddSingleton<ITracer>(serviceProvider =>
-            //{
-            //    string serviceName = Assembly.GetEntryAssembly().GetName().Name;
+            services.AddSingleton<ITracer>(serviceProvider =>
+            {
+                string serviceName = Assembly.GetEntryAssembly().GetName().Name;
 
-            //    ILoggerFactory loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
+                ILoggerFactory loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
 
-            //    ISampler sampler = new ConstSampler(sample: true);
-            //    var reporter = new RemoteReporter.Builder().WithLoggerFactory(loggerFactory)
-            //    .WithSender(new UdpSender("jaeger-agent", 6831, 0)).Build();
+                ISampler sampler = new ConstSampler(sample: true);
+                var reporter = new RemoteReporter.Builder().WithLoggerFactory(loggerFactory)
+                .WithSender(new UdpSender("jaeger-agent", 6831, 0)).Build();
 
-            //    ITracer tracer = new Tracer.Builder(serviceName).WithLoggerFactory(loggerFactory).
-            //    WithSampler(sampler).WithReporter(reporter).Build();
+                ITracer tracer = new Tracer.Builder(serviceName).WithLoggerFactory(loggerFactory).
+                WithSampler(sampler).WithReporter(reporter).Build();
 
-            //    GlobalTracer.Register(tracer);
+                GlobalTracer.Register(tracer);
 
-            //    return tracer;
-            //});
+                return tracer;
+            });
 
-            //services.AddOpenTracing();
+            services.AddOpenTracing();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
